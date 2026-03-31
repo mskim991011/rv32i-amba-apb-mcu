@@ -44,7 +44,7 @@ The SoC utilizes Memory-Mapped I/O (MMIO) to access memory and peripherals.
 The software layer is written in C and directly interacts with the hardware registers defined in the memory map.
 * **Switch & LED Control:** Reads the 16-bit input from the Basys 3 switches (GPI) and outputs the corresponding values to the LEDs (GPO).
 * **7-Segment Display:** Combines upper and lower 8-bit switch inputs into a 16-bit value and sends it to the FND controller to display hexadecimal values.
-* **UART Polling:** Evaluates the `UART_STATUS` register via polling to check the `TX_READY` flag, ensuring data synchronization between the fast CPU and the slow 9600 bps UART transmission.
+* **UART Polling & Configurable Baud Rate:** Evaluates the `UART_STATUS` register via polling to check the `TX_READY` flag, ensuring data synchronization between the fast CPU and the slower UART transmission. [cite_start]The baud rate is dynamically configurable to 9600, 19200, or 115200 bps using the `UART_BAUD` register.
 
 ---
 
